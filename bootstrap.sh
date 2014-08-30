@@ -9,5 +9,12 @@ sudo aptitude install -y ros-indigo-desktop-full ubuntu-desktop
 sudo rosdep init
 rosdep update -y
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+source /opt/ros/indigo/setup.bash
 source ~/.bashrc
 sudo aptitude install -y python-rosinstall
+
+mkdir -p ~/catkin_workspace/src
+cd ~/catkin_workspace/ 
+catkin_make
+cd ~
+echo "source ~/catkin_workspace/devel/setup.bash" > ~/.bashrc
